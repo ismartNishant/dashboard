@@ -13,11 +13,20 @@ font-family: 'Roboto', sans-serif; */
     --third-clr: #4BCBEB;
     --fourth-clr:  #FE9496;
     --fifth-clr: #9E58FF;
-
-
-
 }
 
+.bg1{
+  background: var(--primary-color)
+}
+.bg2{
+ background: var(--sec-clr);
+}
+.clr1{
+  color: var(--primary-color);
+}
+.clr2{
+  color: var(--sec-clr);
+}
 
 * {
     box-sizing: border-box;
@@ -71,12 +80,17 @@ hr.h-color{
     height:2.5rem;
 }
 .profile img,
-.col-6 img{
+.img-container img{
     width: 100%;
     object-fit: cover;
 }
-.col-6 img{
-    /* height: 90%; */
+.img-container{
+    max-width: 48%;
+    max-height: 21rem;
+}
+.btn{
+    transition: all .3s;
+    padding: .15rem 1rem;
 }
 i{
     cursor: pointer;
@@ -85,7 +99,32 @@ i{
         outline: none;
 }
 
+.dashboard-content .col-6 .card{
+    width: 18rem;
+}
 
+.dashboard-content .col-6 .card-body .btn:hover{
+    background: var(--third-clr);
+    border-radius: 20px !important;
+}
+.dashboard-content .col-3{
+    width: 32%;
+}
+@media screen and (max-width:1040px) {
+    .dashboard-content .col-6 .card .card-title{
+        font-size: .7rem;
+    }
+    .dashboard-content .col-6 .card .card-text{
+        font-size: .5rem;
+    }
+    .dashboard-content .col-6 .card .card-body .btn{
+        font-size: .6rem;
+        padding: 0rem .5rem;
+    }
+    .dashboard-content .col-6 .card .card-body{
+        padding: .5rem;
+    }
+}
 
 @media screen and (max-width: 800px) {
     #side-nav{
@@ -93,15 +132,14 @@ i{
         position: fixed;
         min-height: 100vh;
         z-index: 1;
-
     }
 
     #side-nav.active{
         margin-left: 0;
     }
-    .col-6,
-    .col-8,
-    .col-3 {
+    .dashboard-content .col-6,
+    .dashboard-content .col-8,
+    .dashboard-content .col-3 {
         width: 100%;
     }
 }
